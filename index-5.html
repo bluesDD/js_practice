@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            function insertItem() {
+                var container = 
+                    document.getElementById("container");
+                //要素の作成
+                var item = 
+                    document.createElement("li"); 
+                //item要素へプロパティを設定する
+                item.textContent = "hello";
+                //文書にappendchildメソッドを使って追加
+                container.appendChild(item);
+            }
+
+            function removeItem() {
+                var container =
+                    document.getElementById("container");
+                var item =
+                    container.lastChild;
+                if (item) {
+                    container.removeChild(item);
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <button onclick="insertItem()">insert</button>
+        <button onclick="removeItem()">delete</button>
+        <ol id="container"></ol>
+    </body>
+</html>

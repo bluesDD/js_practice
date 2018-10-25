@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            //追加メソッド
+            function addItem() {
+                //追加場所となる要素の取得
+                var container = 
+                    document.getElementById("container");
+
+                //追加要素の内容
+                var item = 
+                    document.createElement("ul");
+                //liの中身
+                item.textContent = "Look!!";
+                container.appendChild(item);
+                
+            }
+            //削除メソッド
+            function delItem() {
+                //削除場所となる要素の取得
+                var container = 
+                    document.getElementById("container");
+                
+                var item = 
+                    container.lastChild;
+                //削除処理
+                if (item) {
+                    container.removeChild(item);
+                }
+            }
+  
+        </script>
+
+    </head>
+    <body>
+        
+        <button onclick="addItem()">add</button>
+        <button onclick="delItem()">del</button>
+        <ol id="container">
+          
+        </ol>
+    </body>
+</html>
