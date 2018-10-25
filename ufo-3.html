@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+            var timerId;
+            
+            //タイマーの開始
+            function timeoutStart() {
+                timerId = setTimeout(whattime, 3000);
+            } 
+            
+            //タイマーの停止    
+            function timeoutStop() {
+                clearTimeout(timerId);
+            }
+
+            //定期的タイマーの開始
+            function intervalStart() {
+                timerId = setInterval(whattime, 2000);
+
+            }
+
+            //定期的タイマーの停止
+            function intervalStop() {
+                clearInterval(timerId);
+            }
+
+            //現在時刻表示
+            function whattime() {
+                document.getElementById("info").textContent = new Date();
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="timeoutStart()">setTimeout</button>
+        <button onclick="timeoutStop()">clearTimeout</button>
+        
+        <button onclick="intervalStart()">setInterval</button>
+        <button onclick="intervalStop()">clearInterval</button>
+        <p id="info"></p>
+    </body>
+</html>

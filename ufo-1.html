@@ -14,24 +14,25 @@
             var ufo, newufo;
             function init() {
                 window.addEventListener("keydown", keydown);
-                var ufo = new
-                    UFO(document.getElementById("ufo"), 100);
+                var ufo = new UFO(document.getElementById("ufo"), 100);
                     NewUFO.prototype = ufo;
                     newufo = new NewUFO(100);
             }
 
             function keydown(e) {
                 if (e.keyCode == 37) {
-                    ufo.moveLeft();
+                    newufo.moveLeft();
                 } else if (e.keyCode == 39) {
-                    ufo.moveRight();
+                    newufo.moveRight();
                 } else if (e.keyCode == 38) {
-                    
+                    newufo.moveUp();
+                } else if (e.keyCode == 40) {
+                    newufo.moveDown();
                 }
             }
 
-            function UFO(_elm, _xpos) {
-                this.elem = _elm;
+            function UFO(_elem, _xpos) {
+                this.elem = _elem;
                 this.xpos = _xpos;
                 this.moveLeft = function () {
                     this.xpos -= 10;
@@ -45,16 +46,15 @@
             }
 
             function NewUFO(_ypos) {
-                this.ypos = _ypos;
-                this.moveUp = fuction () {
+                this.ypos = _ypos;      
+                this.moveUp = function () {
                     this.ypos -= 10;
                     this.elem.style.top = this.ypos + "px";
                 }
                 this.moveDown = function () {
-                    this.ypos = function () {
-                        this.ypos += 10;
-                        this.elem.style.top = this.ypos + "px";
-                    }    
+                    this.ypos += 10;
+                    this.elem.style.top = this.ypos + "px";
+                        
                 }
                 this.elem.style.top = this.ypos + "px";
             }
